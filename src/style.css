@@ -3,3 +3,12 @@
  @plugin "daisyui" {
    themes: light --default;
  }
+
+@media (max-width: 450px) {
+  .feildset-vertical{
+  flex-direction: column;
+  }
+  .label{
+    font-size: 18px;
+  }
+}
