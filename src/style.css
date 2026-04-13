@@ -1,14 +1,12 @@
   @import "tailwindcss";
- @plugin "daisyui";
- @plugin "daisyui" {
-   themes: light --default;
- }
+  @plugin "daisyui";
 
-@media (max-width: 450px) {
-  .feildset-vertical{
-  flex-direction: column;
+  @plugin "daisyui" {
+    themes: light --default;
   }
-  .label{
-    font-size: 18px;
+
+  .container-S {
+    background: linear-gradient(45deg, rgb(151, 134, 134), rgb(86, 72, 72));
   }
-}
+
+ 
