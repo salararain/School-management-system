@@ -5,8 +5,8 @@
     themes: light --default;
   }
 
-  .container-S {
-    background: linear-gradient(45deg, rgb(151, 134, 134), rgb(86, 72, 72));
+  .gr-color {
+    background: linear-gradient(45deg, rgb(80, 150, 49), rgb(142, 244, 53));
   }
 
  
