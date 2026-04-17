@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import { AddNewStudent, Dashbord, Login , AddTeachers} from "./pages";
+import { AddNewStudent, Dashbord, Login , AddTeachers,AddSubjects} from "./pages";
 import Layout from "./components/layout"
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
           <Route path="/dashbord" element={<Dashbord/>}></Route>
           <Route path="/addnewstudent" element={<AddNewStudent/>}></Route>
           <Route path= "/addteachers" element={<AddTeachers/>}></Route>
+          <Route path= "/addsubjects" element={<AddSubjects/>}></Route>
           </Route>
         </Routes>
     </>

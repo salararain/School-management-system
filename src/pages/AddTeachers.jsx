@@ -44,8 +44,8 @@ const AddTeachers = () => {
                 </fieldset>
 
             </div>
-            <div className="btnn-container flex justify-center  m-4 ">
-                <button className="btn btn-primary  w-[270px]  max-[850px]:w-52 max-[650px]:w-48 max-[450px]:w-full p-1  text-xl max-[850px]:text-base max-[650px]:text-sm max-[450px]:text-xl m-4">Submit</button>
+            <div className="btnn-container flex justify-start items-start m-4 ">
+                <button className="btn btn-primary p-3  text-xl max-[850px]:text-base max-[650px]:text-sm max-[450px]:text-xl m-4">Submit</button>
             </div>
         </div>
     )
