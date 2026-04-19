@@ -7,11 +7,6 @@ const AddTeachers = () => {
                     <legend className="fieldset-legend text-left text-xl max-[850px]:text-base max-[650px]:text-sm max-[450px]:text-xl">Enter Your First Name:</legend>
                     <input type="text" className="input w-full " placeholder="Type here" />
                 </fieldset>
-                <fieldset className="fieldset  m-1 w-[270px] max-[850px]:w-52 max-[650px]:w-48 max-[450px]:w-full ">
-                    <legend className="fieldset-legend text-left text-xl max-[850px]:text-base max-[650px]:text-sm max-[450px]:text-xl">Enter Your Last Name:</legend>
-                    <input type="text" className="input w-full " placeholder="Type here" />
-
-                </fieldset>
                 <fieldset className="fieldset  m-1 w-[270px]  max-[850px]:w-52 max-[650px]:w-48 max-[450px]:w-full ">
                     <legend className="fieldset-legend text-left text-xl max-[850px]:text-base max-[650px]:text-sm max-[450px]:text-xl">Enter Your Date of Birth:</legend>
                     <input type="date" className="input w-full " placeholder="Type here" />

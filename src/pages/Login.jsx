@@ -16,9 +16,9 @@ const Login = () => {
                     {/* <p className="label">Optional</p> */}
                 </fieldset>
                 <button className="btn btn-primary w-full">Sign in</button>
-                <p className="text-sm text-gray-500 mt-2">
+                {/* <p className="text-sm text-gray-500 mt-2">
                     Don't have an account? <a href="./components/layout.jsx" className="text-blue-500 hover:underline">Sign up</a>
-                </p>
+                </p> */}
             </div>
         </div>
     )
