@@ -1,10 +1,11 @@
-
+import Teacherdatareducer from "./slices/TeacherDataSlice";
 import AddStudentreducer from "./slices/AddStudentSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
-const Store = configureStore ({
+const Store = configureStore({
     reducer: {
-     AddStudentreducer
+        addStudent: AddStudentreducer,
+        teacherdata: Teacherdatareducer
     }
 });
 export default Store;
