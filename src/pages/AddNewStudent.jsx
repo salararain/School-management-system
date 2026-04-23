@@ -14,10 +14,12 @@ const AddNewStudent = () => {
       alert("Please fill the required fields")
       return;
     }
+    console.log(studentData, "std data")
 
     dispatch(AddStudent(studentData))
     
-    setStudentData({  StudentFirstName: "",
+    setStudentData({ 
+    StudentFirstName: "",
     StudentDateOfBirth: "",
     Gender: "",
     StudentClass: "",

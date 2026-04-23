@@ -1,24 +1,23 @@
 
-
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = {
+  students: []
+};
 
-const AddStudentSlice = createSlice ({
-
-    name: "AddStudent",
-    initialState,
-    reducers:{
-        AddStudent: (state, payload) =>{
-            state.push(payload);
-            console.log(payload);
-
-        },
-        UpdateStudent:() =>{},
-        DeleteStudent: () =>{}
+const AddStudentSlice = createSlice({
+  name: "addStudent",
+  initialState,
+  reducers: {
+    AddStudent: (state, action) => {
+      state.students.push(action.payload);
+    },
+    UpdateStudent: (state, action) =>{
+     const {index, updateStudent} = action.payload;
+     state.students[index] = updateStudent;
     }
+  }
 });
 
-export const { AddStudent, UpdateStudent, DeleteStudent}= AddStudentSlice.actions;
-
+export const { AddStudent, UpdateStudent } = AddStudentSlice.actions;
 export default AddStudentSlice.reducer;
