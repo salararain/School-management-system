@@ -1,34 +1,52 @@
 
+import { useEffect } from "react";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { AddStudent } from "../redux/slices/AddStudentSlice";
+import { AddStudent, UpdateStudent } from "../redux/slices/AddStudentSlice";
 
-const AddNewStudent = () => {
+const AddNewStudent = ({ editData, seteditData, editIndex, SeteditIndex }) => {
   const dispatch = useDispatch();
 
   // const studentReducer = useSelector((state) => state.addStudent);
 
   const onSubmitForm = (event) => {
     event.preventDefault();
-    if(!studentData.StudentFirstName || !studentData.StudentDateOfBirth ){
+    if (!studentData.StudentFirstName || !studentData.StudentDateOfBirth) {
       alert("Please fill the required fields")
       return;
     }
-    console.log(studentData, "std data")
 
-    dispatch(AddStudent(studentData))
+    if (editIndex !== null) {
+      dispatch(UpdateStudent({ index: editIndex, updateStudent: studentData }));
+      seteditIndex(null);
+      seteditData(null);
+      setStudentData({
+      StudentFirstName: "",
+      StudentDateOfBirth: "",
+      Gender: "",
+      StudentClass: "",
+      ParentGuardianName: "",
+      ParentGuardianContact: "",
+      StudentContactNumber: "",
+      ParentStudentEmail: "",
+      CurrentAddress: "",
+    })
     
-    setStudentData({ 
-    StudentFirstName: "",
-    StudentDateOfBirth: "",
-    Gender: "",
-    StudentClass: "",
-    ParentGuardianName: "",
-    ParentGuardianContact: "",
-    StudentContactNumber: "",
-    ParentStudentEmail: "",
-    CurrentAddress: "",
-  })
+    }
+    else{ 
+      dispatch(AddStudent(studentData));
+    }
+    setStudentData({
+      StudentFirstName: "",
+      StudentDateOfBirth: "",
+      Gender: "",
+      StudentClass: "",
+      ParentGuardianName: "",
+      ParentGuardianContact: "",
+      StudentContactNumber: "",
+      ParentStudentEmail: "",
+      CurrentAddress: "",
+    })
   }
 
   const [studentData, setStudentData] = useState({
@@ -42,6 +60,12 @@ const AddNewStudent = () => {
     ParentStudentEmail: "",
     CurrentAddress: "",
   });
+  useEffect(() => {
+    if (editData) {
+      setStudentData(editData);
+    }
+
+  }, [editData]);
   const onHandelStudentData = (event, propertyName) => {
     setStudentData((prevData) => ({ ...prevData, [propertyName]: event.target.value }))
   };
@@ -145,7 +169,9 @@ const AddNewStudent = () => {
           </div>
 
           <div className="btnn-container flex justify-start items-Start  m-4 ">
-            <button className="btn btn-neutral p-2 text-xl">Submit</button>
+            <button type="submit" className="btn btn-neutral p-2 text-xl">
+              {editIndex !== null ? "Update" : "Submit"}
+            </button>
           </div>
 
         </form>

@@ -1,10 +1,13 @@
 
 
 import { useSelector } from "react-redux";
-const StudentInfo = () => {
+const StudentInfo = ({seteditData, seteditIndex}) => {
     const students = useSelector((state) => state.addStudent.students);
-    // console.log(students , "std info")
-    console.log(students, "std after add")
+    const onEdit = (student, index) =>{
+        seteditData(student);
+        seteditIndex(index);                             
+    } 
+  
     return (
         <div className="w-[100%] h-[full]  shadow-2xl m-1 rounded">
             <h1 className="text-center text-4xl">Student Information</h1>
@@ -27,7 +30,6 @@ const StudentInfo = () => {
                             <tr>
                                 <td colSpan="7" className="text-center">no students yet</td>
                             </tr>
-
                         ) :
                             students.map((student, index) => (
 
@@ -39,13 +41,11 @@ const StudentInfo = () => {
                                     <td>{student.StudentClass}</td>
                                     <td>{student.StudentContactNumber}</td>
                                     <td>{student.ParentStudentEmail}</td>
-                                    < td >
-                                        <button onClick={() => oEdit(students, index)}>Edit</button>
+                                    <td>
+                                        <button onClick={() => onEdit(student, index)}>Edit</button>
                                     </td>
                                 </tr>
-
                             ))
-
                         }
 
                     </tbody>
