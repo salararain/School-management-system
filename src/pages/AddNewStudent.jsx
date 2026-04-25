@@ -73,7 +73,10 @@ const AddNewStudent = ({ editData, seteditData, editIndex, SeteditIndex }) => {
   return (
     <div className="w-[100%] h-[full] flex justify-center items-center">
       <div className="w-[100%] h-auto  p-1 m-1 shadow-2xl m-1 rounded bg-transparent backdrop-blur-3xl">
-        <h1 className="text-center text-4xl">Addmission From</h1>
+        <h1
+         className="text-center text-4xl">
+          {editIndex !== null ? "Update Student Informattion" : "Add New Student"}
+         </h1>
         <form onSubmit={onSubmitForm}>
           <div className="grid grid-cols-4 m-4  max-[1200px]:grid-cols-3 max-[800px]:grid-cols-2 max-[450px]:grid-cols-1">
 
