@@ -15,9 +15,13 @@ const AddStudentSlice = createSlice({
     UpdateStudent: (state, action) =>{
      const {index, updateStudent} = action.payload;
      state.students[index] = updateStudent;
+    },
+    DeleteStudent: (state,action) =>{
+      const index = action.payload;
+      state.students.splice(index, 1);
     }
   }
 });
 
-export const { AddStudent, UpdateStudent } = AddStudentSlice.actions;
+export const { AddStudent, UpdateStudent, DeleteStudent } = AddStudentSlice.actions;
 export default AddStudentSlice.reducer;

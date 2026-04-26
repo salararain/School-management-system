@@ -1,13 +1,25 @@
 
 
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-const StudentInfo = ({seteditData, seteditIndex}) => {
+import { DeleteStudent } from "../redux/slices/AddStudentSlice";
+
+const StudentInfo = ({ seteditData, seteditIndex }) => {
+    const navigate = useNavigate();
     const students = useSelector((state) => state.addStudent.students);
-    const onEdit = (student, index) =>{
+    const dispatch = useDispatch();
+
+    const onEdit = (student, index) => {
         seteditData(student);
-        seteditIndex(index);                             
-    } 
-  
+        seteditIndex(index);
+        navigate("/addnewstudent");
+    }
+
+    const onDelete = (index) => {
+        dispatch(DeleteStudent(index));
+    };
+
     return (
         <div className="w-[100%] h-[full]  shadow-2xl m-1 rounded">
             <h1 className="text-center text-4xl">Student Information</h1>
@@ -42,7 +54,12 @@ const StudentInfo = ({seteditData, seteditIndex}) => {
                                     <td>{student.StudentContactNumber}</td>
                                     <td>{student.ParentStudentEmail}</td>
                                     <td>
-                                        <button onClick={() => onEdit(student, index)}>Edit</button>
+                                        <button onClick={() => onEdit(student, index)} className="btn btn-primary btn-sm">
+                                            Edit
+                                        </button>
+                                        <button onClick={() => onDelete(index)} className="btn btn-danger btn-sm">
+                                            Delete
+                                        </button>
                                     </td>
                                 </tr>
                             ))

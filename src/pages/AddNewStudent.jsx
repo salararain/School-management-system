@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { AddStudent, UpdateStudent } from "../redux/slices/AddStudentSlice";
 
-const AddNewStudent = ({ editData, seteditData, editIndex, SeteditIndex }) => {
+const AddNewStudent = ({ editData, seteditData, editIndex, seteditIndex }) => {
   const dispatch = useDispatch();
 
   // const studentReducer = useSelector((state) => state.addStudent);
@@ -66,6 +66,7 @@ const AddNewStudent = ({ editData, seteditData, editIndex, SeteditIndex }) => {
     }
 
   }, [editData]);
+  
   const onHandelStudentData = (event, propertyName) => {
     setStudentData((prevData) => ({ ...prevData, [propertyName]: event.target.value }))
   };
